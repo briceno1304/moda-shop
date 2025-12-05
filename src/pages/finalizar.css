@@ -1,0 +1,251 @@
+/* CONTENEDOR GENERAL */
+.finalizar {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* TITULO */
+.finalizar__title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* RESUMEN DE PEDIDO */
+.finalizar__resumen {
+  background: #f7f9fc;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  border-left: 5px solid #4d6fff;
+}
+
+.finalizar__resumen ul {
+  padding-left: 20px;
+}
+
+.finalizar__total span {
+  font-weight: bold;
+  color: #4d6fff;
+}
+
+/* FORMULARIO */
+.finalizar__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.finalizar__form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #333;
+}
+
+/* INPUTS */
+.finalizar__form input,
+.finalizar__form select {
+  margin-top: 6px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1.5px solid #d1d5db;
+  outline: none;
+  font-size: 1rem;
+  background: #fafafa;
+  transition: all 0.2s ease;
+}
+
+.finalizar__form input:focus,
+.finalizar__form select:focus {
+  border-color: #050c2b;
+  box-shadow: 0 0 4px rgba(77, 111, 255, 0.3);
+}
+
+/* CAMPOS DE TARJETA — OCUPAN DOS COLUMNAS */
+.tarjeta__extra {
+  grid-column: span 2;
+  background: #f2f5ff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1.5px solid #dbe3ff;
+}
+
+/* TIPOS DE TARJETA */
+.tarjeta__tipos p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.tarjeta__opciones {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.tarjeta__opcion {
+  width: 150px;
+  padding: 10px;
+  border-radius: 12px;
+  background: #fff;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tarjeta__opcion img {
+  width: 60px;
+  height: auto;
+}
+
+.tarjeta__opcion:hover {
+  border-color: #4d6fff;
+  transform: translateY(-2px);
+}
+
+/* ACTIVADA */
+.tarjeta__opcion.activa {
+  border-color: #4d6fff;
+  background: #eef1ff;
+}
+
+/* MENSAJES */
+.finalizar__mensaje {
+  grid-column: span 2;
+  padding: 12px;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.error {
+  background: #ffe3e3;
+  color: #cc0000;
+}
+
+.success {
+  background: #e2ffe9;
+  color: #0c8a3f;
+}
+
+/* BOTÓN */
+.finalizar__btn {
+  grid-column: span 2;
+  padding: 14px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 12px;
+  background: #202f6e;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.finalizar__btn:hover {
+  background: #3b54cc;
+}
+
+/* RESPONSIVE PARA MÓVIL */
+@media (max-width: 700px) {
+  .finalizar__form {
+    grid-template-columns: 1fr;
+  }
+
+  .tarjeta__extra,
+  .finalizar__btn,
+  .finalizar__mensaje {
+    grid-column: span 1;
+  }
+
+  .tarjeta__opcion {
+    width: 100%;
+  }
+}
+
+.input-fecha {
+  width: 80px;        /* pequeño */
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+  background: #f9f9f9;
+  outline: none;
+  transition: .3s;
+}
+
+.input-fecha:focus {
+  border-color: #6c63ff;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(108, 99, 255, 0.4);
+}
+.toast {
+  width: 100%;
+  background: #2C3855;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: toastIn 0.4s ease forwards;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes toastOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+}
+.dev__toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #2C3855;
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.4s ease forwards;
+  z-index: 9999;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

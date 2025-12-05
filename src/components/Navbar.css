@@ -1,0 +1,91 @@
+.nav {
+  background: #2C3855;
+  height: 100px;                /* altura igual al logo */
+  padding: 0 1rem;              /* solo izquierda/derecha */
+  color: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;          /* centra verticalmente */
+}
+
+.nav__content {
+  max-width: 1100px;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;                    /* menos separación */
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: white;
+}
+
+.nav__logo img {
+  height: 100px;                /* tamaño grande */
+  width: auto;
+  object-fit: contain;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav__links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 6px 10px;
+  transition: 0.3s;
+  border-radius: 6px;
+}
+
+.nav__links a:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Contenedor general */
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 20px;          /* separación entre botones */
+}
+
+/* Carrito */
+.nav__carrito {
+  display: flex;
+  align-items: center;
+  gap: 6px;           /* espacio entre icono y texto */
+  position: relative;
+}
+
+/* Ícono del carrito */
+.carrito__icon {
+  font-size: 20px;
+  color: inherit;     /* usa el color del navbar */
+  margin-top: 0;      /* evita que empuje el texto hacia abajo */
+}
+
+/* Contador rojo */
+.carrito__contador {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

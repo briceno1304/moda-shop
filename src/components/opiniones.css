@@ -1,0 +1,131 @@
+/* CONTENEDOR PRINCIPAL DE OPINIONES */
+.opiniones {
+  margin-top: 50px;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+
+  display: flex;               /* ← HORIZONTAL */
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* ==================== COLUMNA IZQUIERDA ==================== */
+.opiniones__left {
+  width: 40%;
+  min-width: 280px;
+}
+
+.opiniones h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.estrellas {
+  color: #ffcc00;
+  font-size: 30px;
+}
+
+.estrellas.mini {
+  font-size: 20px;
+}
+
+.opiniones__score {
+  margin-top: 5px;
+  font-size: 15px;
+  color: #666;
+}
+
+.opiniones__barras {
+  margin-top: 20px;
+}
+
+.barra {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.barra__fondo {
+  width: 150px;
+  height: 6px;
+  background: #eee;
+  border-radius: 5px;
+}
+
+.barra__relleno {
+  height: 6px;
+  background: #3498ff;    /* azul */
+  border-radius: 5px;
+}
+
+.opiniones__acciones {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.opiniones__acciones input,
+.opiniones__acciones select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* ==================== COLUMNA DERECHA ==================== */
+.opiniones__right {
+  width: 60%;
+}
+
+/* Cada opinión */
+.opinion {
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Nombre y fecha */
+.opinion__autor {
+  font-size: 14px;
+  color: #777;
+  margin: 5px 0;
+}
+
+/* Título (PUROS CUMPLIDOS) */
+.opinion__titulo {
+  margin: 5px 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Texto */
+.opinion__texto {
+  margin: 12px 0;
+  color: #555;
+}
+
+/* ¿Fue útil? */
+.opinion__util {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Botón Ver más */
+.opiniones__btn {
+  margin-top: 25px;
+  padding: 12px 20px;
+  border: 2px solid #3498ff;
+  color: #3498ff;
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.opiniones__btn:hover {
+  background: #e7f3ff;
+}
