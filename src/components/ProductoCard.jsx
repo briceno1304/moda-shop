@@ -1,4 +1,4 @@
-import "./productocard.css";
+import "./Productocard.css";
 import StarRating from "./StarRating";
 import { Link } from "react-router-dom";
 
