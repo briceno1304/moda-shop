@@ -1,0 +1,210 @@
+/* ==========================
+   LAYOUT GENERAL
+========================== */
+.detalle {
+  display: flex;
+  gap: 50px;
+  padding: 50px;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* ==========================
+   GALERÍA IZQUIERDA
+========================== */
+.detalle__galeria {
+  display: flex;
+  gap: 18px;
+}
+
+.galeria__miniaturas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.miniatura {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.miniatura:hover {
+  transform: scale(1.1);
+  border-color: #b76bff;
+}
+
+.detalle__img {
+  width: 420px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* ==========================
+   CONTENEDOR DE DETALLES
+========================== */
+.detalle__info {
+  background: #ffffff;
+  padding: 30px 40px;
+  width: 100%;
+  max-width: 600px;   /* 🔥 MÁS ANCHO */
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* TÍTULOS */
+.detalle__title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.detalle__brand {
+  color: #666;
+  margin-top: px;
+}
+
+.detalle__desc {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-top: 5px;
+}
+
+/* ==========================
+   SECCIONES ORGANIZADAS
+========================== */
+.info__section {
+  padding: 15px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.info__section:last-of-type {
+  border-bottom: none;
+}
+
+.info__row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 1rem;
+}
+
+.info__label {
+  font-weight: bold;
+}
+
+.info__value {
+  color: #333;
+}
+
+/* ==========================
+   CHIPS
+========================== */
+.detalle__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 8px 14px;
+  background: #eee;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  transition: 0.2s;
+}
+
+.chip:hover {
+  background: #ddd;
+}
+
+.chip--active {
+  background: #c43b6d !important;
+  color: white;
+  border-color: #a82b5a;
+}
+
+
+/* ==========================
+   PRECIO
+========================== */
+.detalle__price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* ==========================
+   CANTIDAD
+========================== */
+.detalle__cantidad {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.cantidad__btn {
+  width: 38px;
+  height: 38px;
+  border: none;
+  background: #000;
+  color: white;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cantidad__btn:hover {
+  background: #333;
+}
+
+.cantidad__numero {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* ==========================
+   BOTÓN AGREGAR
+========================== */
+.detalle__btn {
+  padding: 12px 20px;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.detalle__btn:hover {
+  opacity: 0.85;
+}
+
+/* ==========================
+   MENSAJE
+========================== */
+.detalle__mensaje {
+  color: #4caf50;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.detalle__opiniones {
+  max-width: 1400px;
+  margin: 40px auto 80px;
+  padding: 30px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
