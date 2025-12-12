@@ -1,84 +1,72 @@
+/* ===================== NAVBAR BASE ===================== */
 .nav {
   background: #2C3855;
-  height: 100px;                /* altura igual al logo */
-  padding: 0 1rem;              /* solo izquierda/derecha */
+  width: 100%;
   color: white;
   box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-  display: flex;
-  align-items: center;          /* centra verticalmente */
+  position: relative;
+  z-index: 50;
 }
 
 .nav__content {
+  height: 100px;
   max-width: 1100px;
-  margin: auto;
+  margin: 0 auto;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between;   /* 🔥 Desktop sigue igual */
   align-items: center;
+  padding: 0 1rem;
 }
 
-.nav__logo {
+
+/* LOGO */
+.nav__logo, .nav__logo-drawer {
   display: flex;
   align-items: center;
-  gap: 15px;                    /* menos separación */
+  gap: 12px;
   font-weight: bold;
-  font-size: 2.5rem;
-  text-decoration: none;
+  font-size: 2rem;
   color: white;
+  text-decoration: none;
 }
-
-.nav__logo img {
-  height: 100px;                /* tamaño grande */
+.nav__logo-img {
+  height: 80px;
   width: auto;
-  object-fit: contain;
 }
 
-.nav__links {
+/* LINKS - escritorio */
+.nav__links.desktop {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 20px;
 }
-
-.nav__links a {
+.nav__links.desktop a {
   color: white;
   text-decoration: none;
-  font-size: 1rem;
   padding: 6px 10px;
-  transition: 0.3s;
+  font-size: 1rem;
   border-radius: 6px;
 }
-
-.nav__links a:hover {
-  background: rgba(255,255,255,0.2);
+.nav__links.desktop a:hover {
+  background: rgba(255,255,255,0.12);
 }
 
-/* Contenedor general */
-.nav__links {
-  display: flex;
-  align-items: center;
-  gap: 20px;          /* separación entre botones */
-}
-
-/* Carrito */
+/* CARRITO - compartido */
 .nav__carrito {
   display: flex;
   align-items: center;
-  gap: 6px;           /* espacio entre icono y texto */
+  gap: 8px;
   position: relative;
+  color: inherit;
+  text-decoration: none;
 }
-
-/* Ícono del carrito */
-.carrito__icon {
-  font-size: 20px;
-  color: inherit;     /* usa el color del navbar */
-  margin-top: 0;      /* evita que empuje el texto hacia abajo */
-}
-
-/* Contador rojo */
+.carrito__icon { font-size: 20px; }
 .carrito__contador {
   position: absolute;
   top: -8px;
-  right: -10px;
+  right: -12px;
   background: red;
   color: white;
   font-size: 12px;
@@ -88,4 +76,158 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* HAMBURGUESA */
+.nav__hamburger {
+  display: none; /* se activa en móvil */
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===================== OVERLAY + DRAWER (MÓVIL DERECHO) ===================== */
+.nav__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 90;
+}
+.nav__overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Drawer anclado a la derecha */
+.nav__drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 85%;              /* ancho por defecto en móvil (ajusta si quieres) */
+  max-width: 360px;        /* limita en pantallas grandes */
+  background: #2C3855;
+  box-shadow: -6px 0 20px rgba(0,0,0,0.3);
+  transform: translateX(100%);  /* oculto fuera de pantalla (derecha) */
+  transition: transform 0.28s cubic-bezier(.2,.8,.2,1);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 12px;
+  gap: 18px;
+}
+
+/* Cuando está abierto */
+.nav__drawer.open {
+  transform: translateX(0);
+}
+
+/* Header interno del drawer */
+.nav__drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.nav__logo-img-drawer {
+  height: 46px;
+  width: auto;
+}
+
+/* Botón cerrar drawer (en header) */
+.nav__drawer-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Links dentro del drawer (verticales) */
+.nav__links.drawer {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 16px;
+  padding: 0;
+  align-items: stretch;
+}
+
+.nav__links.drawer a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 12px;
+  text-align: left;
+  width: 100%;
+  border-radius: 6px;
+}
+.nav__links.drawer a:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+/* ===================== RESPONSIVE BEHAVIOR ===================== */
+/* 🔥 MODO MÓVIL: Mover hamburguesa a la izquierda */
+/* === DESKTOP === */
+@media (min-width: 993px) {
+  .nav__links.desktop {
+    display: flex;
+  }
+
+  .nav__hamburger {
+    display: none;   /* 🔥 icono oculto en computadora */
+  }
+
+  .nav__drawer,
+  .nav__overlay {
+    display: none;   /* 🔥 nunca se usa el drawer en desktop */
+  }
+}
+
+/* === MÓVIL / TABLET === */
+@media (max-width: 992px) {
+
+  .nav__links.desktop {
+    display: none;   /* 🔥 ocultar links en teléfono */
+  }
+
+  .nav__hamburger {
+    display: flex;   /* 🔥 mostrar icono en teléfono */
+    order: -1;       /* mover a la izquierda */
+    align-items: center;
+  }
+
+  .nav__content {
+    justify-content: flex-start;
+    gap: 15px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .nav__content {
+    padding: 10px 15px;
+  }
+}
+
+/* 🔵 Hacer navbar ancho completo en móvil */
+@media (max-width: 992px) {
+  .nav__content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 15px !important;
+  }
 }

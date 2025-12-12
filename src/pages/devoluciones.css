@@ -113,3 +113,74 @@ textarea {
   padding-left: 20px;
   line-height: 1.8;
 }
+
+/* 📱 RESPONSIVO GENERAL */
+@media (max-width: 900px) {
+  .dev__cards {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 700px) {
+  .devoluciones {
+    padding: 20px;
+  }
+
+  .dev__title {
+    font-size: 2rem;
+  }
+
+  .dev__subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .dev__cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .dev__card {
+    padding: 20px;
+  }
+
+  .dev__form-container {
+    padding: 20px;
+  }
+
+  .dev__form input,
+  .dev__form select,
+  .dev__form textarea {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .dev__btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .dev__extra {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dev__title {
+    font-size: 1.7rem;
+  }
+
+  .dev__card h3 {
+    font-size: 1.1rem;
+  }
+
+  textarea {
+    height: 110px;
+  }
+
+  .dev__btn {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+}
