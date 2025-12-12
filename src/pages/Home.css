@@ -241,49 +241,71 @@
 
 
 /* ===========================
-   RESPONSIVE
+   RESPONSIVE EXTRA
+   Para teléfonos reales (600px)
 =========================== */
-@media (max-width: 900px) {
+@media (max-width: 600px) {
+
+  /* HERO */
   .hero {
     flex-direction: column;
     text-align: center;
+    gap: 30px; /* antes 200px */
+  }
+
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
   }
 
   .hero__image img {
-    width: 100%;
-    max-width: 400px;
+    width: 90%;
+    max-width: 320px;
   }
 
+  /* REASONS */
   .reasons__grid {
     flex-direction: column;
+    gap: 20px;
   }
 
-  .testimonials__grid {
-    flex-direction: column;
+  /* QUALITY IMAGES */
+  .quality__images img {
+    width: 45% !important;   /* 2 imágenes por fila */
   }
 }
 
 /* ===========================
-   ANIMACIONES
+   Móviles pequeños (480px)
 =========================== */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+@media (max-width: 480px) {
+
+  .quality__images img {
+    width: 100% !important;  /* 1 imagen por fila */
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .hero__title {
+    font-size: 1.8rem;
+  }
+
+  .hero__subtitle {
+    font-size: 0.95rem;
   }
 }
 
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
+/* ===========================
+   Móviles muy pequeños (360px)
+=========================== */
+@media (max-width: 360px) {
+
+  .hero__title {
+    font-size: 1.6rem;
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+
+  .hero__subtitle {
+    font-size: 0.9rem;
   }
 }
