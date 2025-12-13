@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { CarritoContext } from "../context/CarritoContext";
 import { FaShoppingCart } from "react-icons/fa";
-import "./navbar.css";
+import "./Navbar.css";
 
 export default function Navbar() {
 
