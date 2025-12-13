@@ -129,3 +129,106 @@
 .opiniones__btn:hover {
   background: #e7f3ff;
 }
+
+/* ==========================
+   RESPONSIVE OPINIONES
+========================== */
+
+/* --- 992px: Columnas se apilan verticalmente --- */
+@media (max-width: 992px) {
+  .opiniones {
+    flex-direction: column;
+    gap: 30px;
+    padding: 25px;
+  }
+
+  .opiniones__left,
+  .opiniones__right {
+    width: 100%;
+  }
+
+  .opinion {
+    padding: 18px 0;
+  }
+}
+
+/* --- 768px: Ajustes para tablets --- */
+@media (max-width: 768px) {
+  .opiniones h2 {
+    font-size: 1.6rem;
+  }
+
+  .estrellas {
+    font-size: 26px;
+  }
+
+  .estrellas.mini {
+    font-size: 18px;
+  }
+
+  .barra__fondo {
+    width: 120px;
+  }
+
+  .opiniones__acciones {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .opiniones__acciones input,
+  .opiniones__acciones select {
+    width: 100%;
+  }
+
+  .opinion__titulo {
+    font-size: 1.1rem;
+  }
+
+  .opiniones__btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* --- 480px: Móviles pequeños --- */
+@media (max-width: 480px) {
+  .opiniones {
+    padding: 20px;
+  }
+
+  .opiniones h2 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .barra {
+    gap: 6px;
+  }
+
+  .barra__fondo {
+    width: 100px;
+  }
+
+  .opiniones__acciones {
+    gap: 8px;
+  }
+
+  .opinion__titulo {
+    font-size: 1rem;
+  }
+
+  .opinion__texto {
+    font-size: 0.95rem;
+  }
+
+  .opinion__util {
+    font-size: 13px;
+  }
+
+  .opiniones__btn {
+    padding: 12px;
+    font-size: 14px;
+    width: 100%;
+  }
+}
